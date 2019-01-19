@@ -1,12 +1,13 @@
 [package]
-name = "oxy"
+name = "oxy_macros"
 version = "0.1.0"
 authors = ["Sunjay Varma <varma.sunjay@gmail.com>"]
 edition = "2018"
 
-[dependencies]
-oxy_macros = { version = "0.1.0", path = "oxy_macros" }
+[lib]
+proc-macro = true
 
+[dependencies]
 proc-macro2 = "0.4"
 syn = { version = "0.15", features = ["full"] }
 quote = "0.6"

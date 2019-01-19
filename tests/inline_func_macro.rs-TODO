@@ -1,0 +1,24 @@
+// This is an inline function macro! No need to define an external crate. All code is interpreted
+// at compile-time.
+
+use oxy::inline_proc_macro;
+
+inline_proc_macro! {
+    // Just like with regular proc_macros, we use #[proc_macro] to define our macro function.
+    #[proc_macro]
+    // This language is interpreted, and dynamically typed, so we're just using () as a
+    // placeholder. (TODO: Remove the need for these placeholders)
+    pub fn make_answer(_item: ()) {
+        let name = get_name();
+        quote! {
+            pub struct #name {
+                pub foo: i32,
+                pub bar: i32,
+            }
+        }
+    }
+
+    fn get_name() {
+        "The One and Only Manishearth"
+    }
+}
