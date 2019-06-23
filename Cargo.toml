@@ -1,6 +1,7 @@
 [workspace]
 members = [
   "oxy_macros",
+  "serde-tokenstream",
 ]
 
 [package]
