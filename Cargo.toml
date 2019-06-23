@@ -1,3 +1,8 @@
+[workspace]
+members = [
+  "oxy_macros",
+]
+
 [package]
 name = "oxy"
 version = "0.1.0"
